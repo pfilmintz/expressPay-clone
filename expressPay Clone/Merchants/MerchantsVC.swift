@@ -10,15 +10,15 @@ import UIKit
 class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return merchantSections[section].merchants.count
+        return filteredMerchantSections[section].merchants.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCell.identifier , for: indexPath) as! FeaturedCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MerchantCell.identifier , for: indexPath) as! MerchantCell
         
-        let image = featuredSection[indexPath.section].featuredItems[indexPath.row].image
-        let name = featuredSection[indexPath.section].featuredItems[indexPath.row].name
+        let image = filteredMerchantSections[indexPath.section].merchants[indexPath.row].image
+        let name = filteredMerchantSections[indexPath.section].merchants[indexPath.row].title
         
         cell.imgView.image = image
         cell.nameLabel.text = name
@@ -29,18 +29,21 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
     }
     
     func numberOfSections (in collectionview: UICollectionView) -> Int {
-        return merchantSections.count
+        return filteredMerchantSections.count
         
     }
     
     
     struct Merchant{
         let title: String
+        let section: String
         let image: UIImage
         
     }
     
     var merchants = [Merchant]()
+    var sortedmerchants = [Merchant]()
+    var filteredmerchants = [Merchant]()
   
     
     struct MerchantSection{
@@ -49,27 +52,56 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
     }
     
     var merchantSections = [MerchantSection]()
+    var filteredMerchantSections = [MerchantSection]()
     
     var searchBar = UISearchBar()
     var collectionview: UICollectionView?
+    
+    var VCtitle = ""
+    
+    var initLoad = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var merchant1 = Merchant(title: "AirtelTigo Prepaid TopUp", image: #imageLiteral(resourceName: "groceries"))
-        var merchant2 = Merchant(title: "MTN Prepaid TopUp", image: #imageLiteral(resourceName: "groceries"))
-        var merchant3 = Merchant(title: "Glo Prepaid TopUp", image: #imageLiteral(resourceName: "groceries"))
-        var merchant4 = Merchant(title: "Vodafone Prepaid TopUp", image: #imageLiteral(resourceName: "groceries"))
+        navigationItem.title = VCtitle
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        
+        
+        var merchant1 = Merchant(title: "AirtelTigo Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "groceries"))
+        var merchant2 = Merchant(title: "MTN Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "groceries"))
+        var merchant3 = Merchant(title: "Glo Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "groceries"))
+        var merchant4 = Merchant(title: "Vodafone Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "groceries"))
+        
+        var merchant5 = Merchant(title: "MTN Fiber",section: "INTERNET", image: #imageLiteral(resourceName: "groceries"))
+        var merchant6 = Merchant(title: "MTN 4G Data",section: "INTERNET", image: #imageLiteral(resourceName: "groceries"))
+        var merchant7 = Merchant(title: "Glo Data",section: "INTERNET", image: #imageLiteral(resourceName: "groceries"))
+        var merchant8 = Merchant(title: "Vodafone Broadband",section: "INTERNET", image: #imageLiteral(resourceName: "groceries"))
+        
+        var merchant9 = Merchant(title: "Blue Data Plan",section: "INTERNET", image: #imageLiteral(resourceName: "groceries"))
+        var merchant11 = Merchant(title: "Blue Refill",section: "INTERNET", image: #imageLiteral(resourceName: "groceries"))
+        var merchant12 = Merchant(title: "Busy 4G Data",section: "INTERNET", image: #imageLiteral(resourceName: "groceries"))
+        var merchant13 = Merchant(title: "Surfline Data Bundles",section: "INTERNET", image: #imageLiteral(resourceName: "groceries"))
         
         merchants.append(merchant1)
         merchants.append(merchant2)
         merchants.append(merchant3)
         merchants.append(merchant4)
+        merchants.append(merchant5)
+        merchants.append(merchant6)
+        merchants.append(merchant7)
+        merchants.append(merchant8)
         
-        let merchantSection = MerchantSection(title: "AIRTIME-TOPUP", merchants: merchants)
+        merchants.append(merchant9)
+        merchants.append(merchant11)
+        merchants.append(merchant12)
+        merchants.append(merchant13)
         
-        merchantSections.append(merchantSection)
-        
+        filteredmerchants = merchants
+
         
         
         
@@ -82,6 +114,8 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
         recognizer.numberOfTouchesRequired = 1
         collectionview!.addGestureRecognizer(recognizer)
         
+        sortMerchants()
+        
     }
     
     @objc func dismissOnTapOutside(){
@@ -93,8 +127,65 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
         self.view.endEditing(true)
     }
     
+    func sortMerchants(){
+        
+        filteredMerchantSections.removeAll()
+        
+        let sections = ["AIRTIME-TOPUP","INTERNET"]
+        
+        //using dates to sort transactions in date
+        for section in sections {
+
+            for item in filteredmerchants {
+                if(section == item.section){
+                    
+                    //appending transaction with particular date in group
+                    sortedmerchants.append(item)
+                    
+                    
+            }
+            }
+            //appending group transactions into transaction section
+           // transactionSections.append(TransactionSection(date: date, transactions: newtransactions))
+            
+            let merchantSection = MerchantSection(title: section, merchants: sortedmerchants)
+            
+            filteredMerchantSections.append(merchantSection)
+            
+            if(initLoad){
+                
+            merchantSections = filteredMerchantSections
+            }
+            
+            //clearing group transaction for new date
+            sortedmerchants.removeAll()
+            
+        }
+        
+        if let collectionview = collectionview {
+             initLoad = false
+            collectionview.reloadData()
+        }
+        
+        
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("searchText \(searchText)")
+        
+        filteredmerchants = merchants
+        filteredMerchantSections = merchantSections
+        
+        filteredmerchants = merchants.filter { $0.title.starts(with: searchText)  }
+        
+        
+        
+        sortMerchants()
+        
+    
+        
+      
+        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -103,13 +194,13 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
         let searchName = "\(searchBar.text!)".lowercased()
         
   
-        
-        
     }
     
     func setupConstrainsts(){
         
         view.addSubview(searchBar)
+        
+        searchBar.delegate = self
          
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         
@@ -130,12 +221,10 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
         
       
 
-        collectionview.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.identifier)
+        collectionview.register(MerchantCell.self, forCellWithReuseIdentifier: MerchantCell.identifier)
         
-        collectionview.register(FavouritesCell.self, forCellWithReuseIdentifier: FavouritesCell.identifier)
-    //    collectionview.register(TransactionCell.self, forCellWithReuseIdentifier: TransactionCell.identifier)
+    
         
-      //  collectionview.register(PromoCell.self, forCellWithReuseIdentifier: PromoCell.identifier)
         
        
      
@@ -151,15 +240,15 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
         collectionview.translatesAutoresizingMaskIntoConstraints = false
          
          
-        collectionview.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2).isActive = true
-        collectionview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -2).isActive = true
-        collectionview.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -2).isActive = true
-        collectionview.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 2).isActive = true
+        collectionview.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
+        collectionview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        collectionview.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        collectionview.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
         
-            //collectionview.backgroundColor = #colorLiteral(red: 0, green: 0.6711869624, blue: 1, alpha: 0.8913582303)
+            
+        collectionview.backgroundColor = .white
         
         
-        collectionview.reloadData()
     }
     
     func createLayout() -> UICollectionViewCompositionalLayout{
@@ -169,19 +258,21 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
             
                 //item
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+           
+           item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 5, bottom: 0, trailing: 5)
                 //group
-           let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.333), heightDimension: .absolute(100)), subitems: [item])
+           let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(120)), subitem: item, count: 3)
                 //section
                 let section = NSCollectionLayoutSection(group: group)
                 
                
                 
-                section.decorationItems = [NSCollectionLayoutDecorationItem.background(elementKind: SectionBackgroundDecorationView.identifier)]
+            //    section.decorationItems = [NSCollectionLayoutDecorationItem.background(elementKind: SectionBackgroundDecorationView.identifier)]
                 
                 //scroll behavior/direction
                 section.orthogonalScrollingBehavior = .none
-                section.interGroupSpacing = 10
-                section.contentInsets = .init(top: 0, leading: 15, bottom: 10, trailing: 10)
+                section.interGroupSpacing = 0
+                section.contentInsets = .init(top: 0, leading: 5, bottom: 0, trailing: 5)
                 
               
                 
@@ -189,11 +280,13 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
                 section.supplementariesFollowContentInsets = false
                 
                 let headerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                             heightDimension: .estimated(50))
+                                                             heightDimension: .estimated(40))
                     
                 let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerHeaderSize,elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
                 
                 
+           // for sticky header
+           sectionHeader.pinToVisibleBounds = true
                 
                     
                 section.boundarySupplementaryItems = [sectionHeader]
@@ -211,6 +304,28 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
         layout.register(SectionBackgroundDecorationView.self, forDecorationViewOfKind: SectionBackgroundDecorationView.identifier)
         return layout
         
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind{
+        case UICollectionView.elementKindSectionHeader:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCell.identifier, for: indexPath) as! HeaderCell
+            header.headerlabel2.isHidden = true
+            header.headerlabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.8470588235)
+            header.headerlabel.font = UIFont(name: "Avenir", size: 14)
+            header.headerlabel.text = filteredMerchantSections[indexPath.section].title
+            header.backgroundColor = #colorLiteral(red: 0.7019608021, green: 0.8431372643, blue: 1, alpha: 1)
+            
+            
+          
+            
+            
+     
+            return header
+        default:
+            return HeaderCell()
+        }
     }
     
 

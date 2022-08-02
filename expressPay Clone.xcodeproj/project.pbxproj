@@ -7,15 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0467171A28993DDE002E92D6 /* MerchantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467171928993DDE002E92D6 /* MerchantsVC.swift */; };
+		0467171C28994596002E92D6 /* MerchantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467171B28994596002E92D6 /* MerchantCell.swift */; };
+		0467171E289972E9002E92D6 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467171D289972E9002E92D6 /* TabBarViewController.swift */; };
+		0467172128997346002E92D6 /* PayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467172028997346002E92D6 /* PayVC.swift */; };
+		04671724289973A1002E92D6 /* TransfersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04671723289973A1002E92D6 /* TransfersVC.swift */; };
 		0478C9C2289854D200048816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9C1289854D200048816 /* AppDelegate.swift */; };
 		0478C9C4289854D200048816 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9C3289854D200048816 /* SceneDelegate.swift */; };
 		0478C9C6289854D200048816 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9C5289854D200048816 /* ViewController.swift */; };
 		0478C9C9289854D200048816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0478C9C7289854D200048816 /* Main.storyboard */; };
 		0478C9CB289854D500048816 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0478C9CA289854D500048816 /* Assets.xcassets */; };
 		0478C9CE289854D500048816 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0478C9CC289854D500048816 /* LaunchScreen.storyboard */; };
+		0478C9D7289855E100048816 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9D6289855E100048816 /* HomeVC.swift */; };
+		0478C9DA2898563800048816 /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9D92898563800048816 /* FeaturedCell.swift */; };
+		0478C9DC2898568500048816 /* FavouritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9DB2898568500048816 /* FavouritesCell.swift */; };
+		0478C9DE28986F5B00048816 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9DD28986F5B00048816 /* HeaderCell.swift */; };
+		0478C9E0289873AD00048816 /* FeaturedSectionBackgroundDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9DF289873AD00048816 /* FeaturedSectionBackgroundDecorationView.swift */; };
+		9888D91A21EC140A79AEC70E /* Pods_expressPay_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2AC178E46B3EA08ED5BFB2 /* Pods_expressPay_Clone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0467171928993DDE002E92D6 /* MerchantsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantsVC.swift; sourceTree = "<group>"; };
+		0467171B28994596002E92D6 /* MerchantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantCell.swift; sourceTree = "<group>"; };
+		0467171D289972E9002E92D6 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		0467172028997346002E92D6 /* PayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayVC.swift; sourceTree = "<group>"; };
+		04671723289973A1002E92D6 /* TransfersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersVC.swift; sourceTree = "<group>"; };
 		0478C9BE289854D200048816 /* expressPay Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "expressPay Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0478C9C1289854D200048816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0478C9C3289854D200048816 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +40,14 @@
 		0478C9CA289854D500048816 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0478C9CD289854D500048816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0478C9CF289854D500048816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0478C9D6289855E100048816 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		0478C9D92898563800048816 /* FeaturedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
+		0478C9DB2898568500048816 /* FavouritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesCell.swift; sourceTree = "<group>"; };
+		0478C9DD28986F5B00048816 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		0478C9DF289873AD00048816 /* FeaturedSectionBackgroundDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedSectionBackgroundDecorationView.swift; sourceTree = "<group>"; };
+		3E5A5285220C275E6B5CE258 /* Pods-expressPay Clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-expressPay Clone.debug.xcconfig"; path = "Target Support Files/Pods-expressPay Clone/Pods-expressPay Clone.debug.xcconfig"; sourceTree = "<group>"; };
+		4296412CE8BE7F2498ACC6F5 /* Pods-expressPay Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-expressPay Clone.release.xcconfig"; path = "Target Support Files/Pods-expressPay Clone/Pods-expressPay Clone.release.xcconfig"; sourceTree = "<group>"; };
+		7A2AC178E46B3EA08ED5BFB2 /* Pods_expressPay_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_expressPay_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +55,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9888D91A21EC140A79AEC70E /* Pods_expressPay_Clone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0467171728993AF9002E92D6 /* Merchants */ = {
+			isa = PBXGroup;
+			children = (
+				0467171928993DDE002E92D6 /* MerchantsVC.swift */,
+				0467171828993DC7002E92D6 /* Cells */,
+			);
+			path = Merchants;
+			sourceTree = "<group>";
+		};
+		0467171828993DC7002E92D6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0467171B28994596002E92D6 /* MerchantCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0467171F2899731C002E92D6 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				0467172028997346002E92D6 /* PayVC.swift */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		046717222899738C002E92D6 /* Transfers */ = {
+			isa = PBXGroup;
+			children = (
+				04671723289973A1002E92D6 /* TransfersVC.swift */,
+			);
+			path = Transfers;
+			sourceTree = "<group>";
+		};
 		0478C9B5289854D200048816 = {
 			isa = PBXGroup;
 			children = (
 				0478C9C0289854D200048816 /* expressPay Clone */,
 				0478C9BF289854D200048816 /* Products */,
+				5E27CBC7CA794852405C7DFB /* Pods */,
+				C7A0442BC61F6EF3B76A5F19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +116,10 @@
 		0478C9C0289854D200048816 /* expressPay Clone */ = {
 			isa = PBXGroup;
 			children = (
+				046717222899738C002E92D6 /* Transfers */,
+				0467171F2899731C002E92D6 /* Pay */,
+				0467171728993AF9002E92D6 /* Merchants */,
+				0478C9D5289855C300048816 /* Home */,
 				0478C9C1289854D200048816 /* AppDelegate.swift */,
 				0478C9C3289854D200048816 /* SceneDelegate.swift */,
 				0478C9C5289854D200048816 /* ViewController.swift */,
@@ -63,8 +127,47 @@
 				0478C9CA289854D500048816 /* Assets.xcassets */,
 				0478C9CC289854D500048816 /* LaunchScreen.storyboard */,
 				0478C9CF289854D500048816 /* Info.plist */,
+				0467171D289972E9002E92D6 /* TabBarViewController.swift */,
 			);
 			path = "expressPay Clone";
+			sourceTree = "<group>";
+		};
+		0478C9D5289855C300048816 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0478C9D82898560700048816 /* Cells */,
+				0478C9D6289855E100048816 /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0478C9D82898560700048816 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0478C9D92898563800048816 /* FeaturedCell.swift */,
+				0478C9DB2898568500048816 /* FavouritesCell.swift */,
+				0478C9DD28986F5B00048816 /* HeaderCell.swift */,
+				0478C9DF289873AD00048816 /* FeaturedSectionBackgroundDecorationView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5E27CBC7CA794852405C7DFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E5A5285220C275E6B5CE258 /* Pods-expressPay Clone.debug.xcconfig */,
+				4296412CE8BE7F2498ACC6F5 /* Pods-expressPay Clone.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C7A0442BC61F6EF3B76A5F19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A2AC178E46B3EA08ED5BFB2 /* Pods_expressPay_Clone.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0478C9D2289854D500048816 /* Build configuration list for PBXNativeTarget "expressPay Clone" */;
 			buildPhases = (
+				44C7F2F48BEC967D895CADED /* [CP] Check Pods Manifest.lock */,
 				0478C9BA289854D200048816 /* Sources */,
 				0478C9BB289854D200048816 /* Frameworks */,
 				0478C9BC289854D200048816 /* Resources */,
+				4996A478DD86EA5652E4B0F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +238,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44C7F2F48BEC967D895CADED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-expressPay Clone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4996A478DD86EA5652E4B0F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-expressPay Clone/Pods-expressPay Clone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-expressPay Clone/Pods-expressPay Clone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-expressPay Clone/Pods-expressPay Clone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0478C9BA289854D200048816 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0478C9E0289873AD00048816 /* FeaturedSectionBackgroundDecorationView.swift in Sources */,
+				04671724289973A1002E92D6 /* TransfersVC.swift in Sources */,
 				0478C9C6289854D200048816 /* ViewController.swift in Sources */,
+				0467171E289972E9002E92D6 /* TabBarViewController.swift in Sources */,
+				0478C9D7289855E100048816 /* HomeVC.swift in Sources */,
+				0467171C28994596002E92D6 /* MerchantCell.swift in Sources */,
+				0467172128997346002E92D6 /* PayVC.swift in Sources */,
 				0478C9C2289854D200048816 /* AppDelegate.swift in Sources */,
+				0467171A28993DDE002E92D6 /* MerchantsVC.swift in Sources */,
+				0478C9DC2898568500048816 /* FavouritesCell.swift in Sources */,
+				0478C9DA2898563800048816 /* FeaturedCell.swift in Sources */,
 				0478C9C4289854D200048816 /* SceneDelegate.swift in Sources */,
+				0478C9DE28986F5B00048816 /* HeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,6 +441,7 @@
 		};
 		0478C9D3289854D500048816 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5A5285220C275E6B5CE258 /* Pods-expressPay Clone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +470,7 @@
 		};
 		0478C9D4289854D500048816 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4296412CE8BE7F2498ACC6F5 /* Pods-expressPay Clone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
