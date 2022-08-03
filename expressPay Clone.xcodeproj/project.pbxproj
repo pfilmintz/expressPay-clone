@@ -15,6 +15,7 @@
 		04671724289973A1002E92D6 /* TransfersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04671723289973A1002E92D6 /* TransfersVC.swift */; };
 		0476581B289A8A5300FF9828 /* PayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476581A289A8A5300FF9828 /* PayCell.swift */; };
 		0476581D289A997500FF9828 /* NewPayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476581C289A997500FF9828 /* NewPayCell.swift */; };
+		0476581F289AA85600FF9828 /* TransferItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476581E289AA85600FF9828 /* TransferItemCell.swift */; };
 		0478C9C2289854D200048816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9C1289854D200048816 /* AppDelegate.swift */; };
 		0478C9C4289854D200048816 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9C3289854D200048816 /* SceneDelegate.swift */; };
 		0478C9C6289854D200048816 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9C5289854D200048816 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		04671723289973A1002E92D6 /* TransfersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersVC.swift; sourceTree = "<group>"; };
 		0476581A289A8A5300FF9828 /* PayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCell.swift; sourceTree = "<group>"; };
 		0476581C289A997500FF9828 /* NewPayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPayCell.swift; sourceTree = "<group>"; };
+		0476581E289AA85600FF9828 /* TransferItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferItemCell.swift; sourceTree = "<group>"; };
 		0478C9BE289854D200048816 /* expressPay Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "expressPay Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0478C9C1289854D200048816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0478C9C3289854D200048816 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				04671723289973A1002E92D6 /* TransfersVC.swift */,
+				0476581E289AA85600FF9828 /* TransferItemCell.swift */,
 			);
 			path = Transfers;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				0467172128997346002E92D6 /* PayVC.swift in Sources */,
 				0478C9C2289854D200048816 /* AppDelegate.swift in Sources */,
 				0467171A28993DDE002E92D6 /* MerchantsVC.swift in Sources */,
+				0476581F289AA85600FF9828 /* TransferItemCell.swift in Sources */,
 				0476581B289A8A5300FF9828 /* PayCell.swift in Sources */,
 				0478C9DC2898568500048816 /* FavouritesCell.swift in Sources */,
 				0478C9DA2898563800048816 /* FeaturedCell.swift in Sources */,
