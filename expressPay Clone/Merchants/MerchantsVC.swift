@@ -64,7 +64,14 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = VCtitle
+        let lblTitle = UILabel()
+        
+        let titleAttributes : [NSAttributedString.Key: Any] = [.font: UIFont(name:"Avenir", size: 20)!,NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+        
+        let attributedString = NSMutableAttributedString(string: "Merchants", attributes: titleAttributes)
+        lblTitle.attributedText = attributedString
+        lblTitle.sizeToFit()
+        navigationItem.titleView = lblTitle
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
         

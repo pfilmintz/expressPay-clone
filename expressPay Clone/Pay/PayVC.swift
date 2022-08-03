@@ -120,10 +120,20 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        
         view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         
+        let lblTitle = UILabel()
         
-        navigationItem.title = "Pay"
+        let titleAttributes : [NSAttributedString.Key: Any] = [.font: UIFont(name:"Avenir", size: 20)!,NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+        
+        let attributedString = NSMutableAttributedString(string: "Pay", attributes: titleAttributes)
+        lblTitle.attributedText = attributedString
+        lblTitle.sizeToFit()
+        navigationItem.titleView = lblTitle
+        
+       // navigationItem.title = "Pay"
         
         view.addSubview(searchBar)
         

@@ -16,6 +16,8 @@
 		0476581B289A8A5300FF9828 /* PayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476581A289A8A5300FF9828 /* PayCell.swift */; };
 		0476581D289A997500FF9828 /* NewPayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476581C289A997500FF9828 /* NewPayCell.swift */; };
 		0476581F289AA85600FF9828 /* TransferItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0476581E289AA85600FF9828 /* TransferItemCell.swift */; };
+		04765822289AACA900FF9828 /* MyMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04765821289AACA900FF9828 /* MyMoneyVC.swift */; };
+		04765825289AC45D00FF9828 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04765824289AC45D00FF9828 /* NavigationBar.swift */; };
 		0478C9C2289854D200048816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9C1289854D200048816 /* AppDelegate.swift */; };
 		0478C9C4289854D200048816 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9C3289854D200048816 /* SceneDelegate.swift */; };
 		0478C9C6289854D200048816 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478C9C5289854D200048816 /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 		0476581A289A8A5300FF9828 /* PayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCell.swift; sourceTree = "<group>"; };
 		0476581C289A997500FF9828 /* NewPayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPayCell.swift; sourceTree = "<group>"; };
 		0476581E289AA85600FF9828 /* TransferItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferItemCell.swift; sourceTree = "<group>"; };
+		04765821289AACA900FF9828 /* MyMoneyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoneyVC.swift; sourceTree = "<group>"; };
+		04765824289AC45D00FF9828 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		0478C9BE289854D200048816 /* expressPay Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "expressPay Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0478C9C1289854D200048816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0478C9C3289854D200048816 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,22 @@
 			path = Transfers;
 			sourceTree = "<group>";
 		};
+		04765820289AAC0500FF9828 /* MyMoney */ = {
+			isa = PBXGroup;
+			children = (
+				04765821289AACA900FF9828 /* MyMoneyVC.swift */,
+			);
+			path = MyMoney;
+			sourceTree = "<group>";
+		};
+		04765823289AC43D00FF9828 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04765824289AC45D00FF9828 /* NavigationBar.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		0478C9B5289854D200048816 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +147,8 @@
 		0478C9C0289854D200048816 /* expressPay Clone */ = {
 			isa = PBXGroup;
 			children = (
+				04765823289AC43D00FF9828 /* extensions */,
+				04765820289AAC0500FF9828 /* MyMoney */,
 				046717222899738C002E92D6 /* Transfers */,
 				0467171F2899731C002E92D6 /* Pay */,
 				0467171728993AF9002E92D6 /* Merchants */,
@@ -309,10 +331,12 @@
 				0476581F289AA85600FF9828 /* TransferItemCell.swift in Sources */,
 				0476581B289A8A5300FF9828 /* PayCell.swift in Sources */,
 				0478C9DC2898568500048816 /* FavouritesCell.swift in Sources */,
+				04765822289AACA900FF9828 /* MyMoneyVC.swift in Sources */,
 				0478C9DA2898563800048816 /* FeaturedCell.swift in Sources */,
 				0478C9C4289854D200048816 /* SceneDelegate.swift in Sources */,
 				0478C9DE28986F5B00048816 /* HeaderCell.swift in Sources */,
 				0476581D289A997500FF9828 /* NewPayCell.swift in Sources */,
+				04765825289AC45D00FF9828 /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

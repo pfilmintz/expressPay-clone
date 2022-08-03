@@ -58,11 +58,32 @@ class TransfersVC: UIViewController , UICollectionViewDelegate,UICollectionViewD
         return label
         
     }()
+    
+  /*  override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.transparentNavigationBar()
+        navigationController?.setTintColor(.black)
+    }*/
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        
+        
+       /* var navBarColor = navigationController!.navigationBar
+        navBarColor.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navBarColor.titleTextAttributes =
+        [NSAttributedString.Key.foregroundColor: UIColor.black]*/
+        
+    //    navigationController?.navigationBar.barTintColor = UIColor.white
+        
+        
+        
+        navigationItem.title = "Transfers"
+        
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         view.addSubview(titleLabel)
         
@@ -110,7 +131,7 @@ class TransfersVC: UIViewController , UICollectionViewDelegate,UICollectionViewD
 
         collectionview.register(TransferItemCell.self, forCellWithReuseIdentifier: TransferItemCell.identifier)
      
-        title = "collectionView"
+        
         
         collectionview.delegate = self
         collectionview.dataSource = self
@@ -144,3 +165,4 @@ class TransfersVC: UIViewController , UICollectionViewDelegate,UICollectionViewD
     */
 
 }
+

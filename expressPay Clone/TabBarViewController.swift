@@ -12,23 +12,24 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        overrideUserInterfaceStyle = .light
         
      //   view.backgroundColor = .systemBackground
         
         let vc1 = UINavigationController(rootViewController: HomeVC())
         let vc2 = UINavigationController(rootViewController:PayVC())
         let vc3 = UINavigationController(rootViewController:TransfersVC())
+        let vc4 = UINavigationController(rootViewController:MyMoneyVC())
         
-        self.setViewControllers([vc1,vc2,vc3], animated: false)
+        self.setViewControllers([vc1,vc2,vc3,vc4], animated: false)
         
         guard let items = self.tabBar.items else {
             return
             
         }
         
-        let images = ["house","bell","person.circle"]
-        let titles = ["Home","Pay","Transfers"]
+        let images = ["house","bell","person.circle","house"]
+        let titles = ["Home","Pay","Transfers","MyMoney"]
         
         for x in 0..<items.count {
         //    items[1].badgeValue = "1"
@@ -52,14 +53,14 @@ class TabBarViewController: UITabBarController {
         if #available(iOS 15.0, *) {
            let appearance = UITabBarAppearance()
            appearance.configureWithOpaqueBackground()
-           appearance.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+           appearance.backgroundColor = #colorLiteral(red: 0, green: 0.2684682608, blue: 0.4762560725, alpha: 1)
            
             self.tabBar.standardAppearance = appearance
             self.tabBar.scrollEdgeAppearance =  self.tabBar.standardAppearance
         }
         else{
         
-        tabBar.barTintColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        tabBar.barTintColor = #colorLiteral(red: 0, green: 0.2684682608, blue: 0.4762560725, alpha: 1)
         tabBar.isTranslucent = false
         }
     }

@@ -51,19 +51,21 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     /*   let lblTitle = UILabel()
+        let lblTitle = UILabel()
         
-        let titleAttributes : [NSAttributedString.Key: Any] = [.font: UIFont(name:"Noteworthy", size: 25)!,NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)]
+        let titleAttributes : [NSAttributedString.Key: Any] = [.font: UIFont(name:"Avenir", size: 20)!,NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
         
-        let attributedString = NSMutableAttributedString(string: "Minzter", attributes: titleAttributes)
+        let attributedString = NSMutableAttributedString(string: "expressPay", attributes: titleAttributes)
         lblTitle.attributedText = attributedString
         lblTitle.sizeToFit()
-        navigationItem.titleView = lblTitle*/
+        navigationItem.titleView = lblTitle
+        
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         
         view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         
         
-        navigationItem.title = "expressPay"
+        //navigationItem.title = "expressPay"
         
         let featuredItem1 = featuredData(name: "Airtime", image: #imageLiteral(resourceName: "groceries"))
         let featuredItem2 = featuredData(name: "Internet", image: #imageLiteral(resourceName: "groceries"))
