@@ -39,6 +39,9 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
     
     var featuredSection = [FeaturedSection]()
     var favSection = [FavSection]()
+    
+    var buttonDisplayMode: ButtonDisplayMode = .titleAndImage
+        var buttonStyle: ButtonStyle = .backgroundColor
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -334,16 +337,128 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
 }
 
 extension HomeVC: SwipeCollectionViewCellDelegate {
+    
+    
+    func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
+        
+        switch descriptor {
+        case .read:
+            return
+        case .unread:
+            return
+        case .more:
+            
+            buttonDisplayMode = .titleOnly
+            
+            action.title = descriptor.title(forDisplayMode: buttonDisplayMode)
+        case .flag:
+            return
+        case .trash:
+            return
+        case .star:
+            buttonDisplayMode = .imageOnly
+            
+            action.title = descriptor.title(forDisplayMode: buttonDisplayMode)
+        }
+        
+       //    action.title = descriptor.title(forDisplayMode: buttonDisplayMode)
+        
+        
+           action.image = descriptor.image(forStyle: buttonStyle, displayMode: buttonDisplayMode)
+           
+        action.backgroundColor = .orange
+        
+         /*  switch buttonStyle {
+           case .backgroundColor:
+               action.backgroundColor = descriptor.color(forStyle: buttonStyle)
+           case .circular:
+               action.backgroundColor = .clear
+               action.textColor = descriptor.color(forStyle: buttonStyle)
+               action.font = .systemFont(ofSize: 13)
+               action.transitionDelegate = ScaleTransition.default
+           }*/
+        
+       }
+    
+ /*   func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .selection
+        options.transitionStyle = .border
+        switch buttonStyle {
+                case .backgroundColor:
+                    options.buttonSpacing = 11
+                case .circular:
+                    options.buttonSpacing = 4
+               
+        }
+                
+      //  let descriptor: ActionDescriptor = email.unread ? .read : .unread
+        //            configure(action: read, with: descriptor)
+    
+        
+        return options
+    }*/
+    
     func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
 
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+     /*   let deleteAction = SwipeAction(style: .default, title: "more") { action, indexPath in
             // handle action by updating model with deletion
         }
 
         // customize the action appearance
-        deleteAction.image = UIImage(named: "delete")
+        deleteAction.image = UIImage(named: "house")
+        deleteAction.backgroundColor = .orange
+      
+      return [deleteAction]
+      
+      */
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! FavouritesCell
 
-        return [deleteAction]
+         let closure: (UIAlertAction) -> Void = { _ in cell.hideSwipe(animated: true) }
+         let more = SwipeAction(style: .default, title: nil) { action, indexPath in
+             let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+             controller.addAction(UIAlertAction(title: "Reply", style: .default, handler: closure))
+             controller.addAction(UIAlertAction(title: "Forward", style: .default, handler: closure))
+             controller.addAction(UIAlertAction(title: "Mark...", style: .default, handler: closure))
+             controller.addAction(UIAlertAction(title: "Notify Me...", style: .default, handler: closure))
+             controller.addAction(UIAlertAction(title: "Move Message...", style: .default, handler: closure))
+             controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: closure))
+             self.present(controller, animated: true, completion: nil)
+         }
+         configure(action: more, with: .more)
+        
+    //    let more = SwipeAction(style: .default, title: nil, handler: nil)
+     //   more.hidesWhenSelected = true
+        
+       //             configure(action: more, with: .more)
+                    
+                    let delete = SwipeAction(style: .destructive, title: nil) { action, indexPath in
+                        //self.emails.remove(at: indexPath.row)
+                    }
+                    configure(action: delete, with: .star)
+                    
+                 /*  let cell = collectionView.cellForItem(at: indexPath) as! FavouritesCell
+        
+                    let closure: (UIAlertAction) -> Void = { _ in cell.hideSwipe(animated: true) }
+                    let more = SwipeAction(style: .default, title: nil) { action, indexPath in
+                        let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+                        controller.addAction(UIAlertAction(title: "Reply", style: .default, handler: closure))
+                        controller.addAction(UIAlertAction(title: "Forward", style: .default, handler: closure))
+                        controller.addAction(UIAlertAction(title: "Mark...", style: .default, handler: closure))
+                        controller.addAction(UIAlertAction(title: "Notify Me...", style: .default, handler: closure))
+                        controller.addAction(UIAlertAction(title: "Move Message...", style: .default, handler: closure))
+                        controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: closure))
+                        self.present(controller, animated: true, completion: nil)
+                    }
+                    configure(action: more, with: .more)*/
+                    
+                    return [delete, more]
+        
+        
+        
+
+        
     }
 }

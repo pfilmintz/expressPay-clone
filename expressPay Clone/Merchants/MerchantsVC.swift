@@ -204,6 +204,7 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
          
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         
+        searchBar.placeholder = "Search Merchants"
         
         searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         
