@@ -99,8 +99,8 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         
         //navigationItem.title = "expressPay"
         
-        let featuredItem1 = featuredData(name: "Airtime", image: #imageLiteral(resourceName: "vod"))
-        let featuredItem2 = featuredData(name: "Internet", image: #imageLiteral(resourceName: "busy"))
+        let featuredItem1 = featuredData(name: "Airtime", image: #imageLiteral(resourceName: "vod2"))
+        let featuredItem2 = featuredData(name: "Internet", image: #imageLiteral(resourceName: "surfline"))
         let featuredItem3 = featuredData(name: "Bank Direct", image: #imageLiteral(resourceName: "bankdirect2"))
         let featuredItem4 = featuredData(name: "Transfers", image: #imageLiteral(resourceName: "dstv"))
         featuredItems.append(featuredItem1)

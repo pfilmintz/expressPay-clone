@@ -76,10 +76,19 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
             
             cell.selectionStyle = .none
             
+            
+            
             cell.backgroundColor = .white
         
         let item = payments[indexPath.section]
+            
+            if(item.isNew){
+                cell.newLabel.isHidden = false
+            }
         
+            if(!item.isNew){
+                cell.newLabel.isHidden = true
+            }
         cell.imgView.image = item.image
         
         cell.nameLabel.text = item.name
@@ -116,6 +125,7 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
     
     var payments = [payData]()
     var searchBar = UISearchBar()
+    var coloredIconImages = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,8 +164,16 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         let navBarAttributedString = NSMutableAttributedString(string: "EDIT", attributes: navBarTitleAttributes)
         navBarTitle.attributedText = navBarAttributedString
         navBarTitle.sizeToFit()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PayVC.editBtnAction))
+        navBarTitle.isUserInteractionEnabled = true
+        navBarTitle.addGestureRecognizer(tap)
+        
+     
+        
+        
 
-            let rightItem = UIBarButtonItem(customView: navBarTitle)
+        let rightItem = UIBarButtonItem(customView: navBarTitle)
            
             
         navigationItem.rightBarButtonItem = rightItem
@@ -187,16 +205,19 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         
         tableview.backgroundColor = .white
         
-        let pay1 = payData(name: "AIRTIME-TOPUP", image:  #imageLiteral(resourceName: "groceries"),isNew: true,isOpened: false)
-        let pay2 = payData(name: "INTERNET", image:  #imageLiteral(resourceName: "groceries"),isNew: true,isOpened: false)
-        let pay3 = payData(name: "SEND MONEY", image:  #imageLiteral(resourceName: "groceries"),isNew: true,isOpened: false)
-        let pay4 = payData(name: "FUEL", image:  #imageLiteral(resourceName: "groceries"),isNew: true,isOpened: false)
-        let pay5 = payData(name: "SCAN2PAY", image:  #imageLiteral(resourceName: "groceries"),isNew: true,isOpened: false)
-        let pay6 = payData(name: "TV", image:  #imageLiteral(resourceName: "groceries"),isNew: true,isOpened: false)
-        let pay7 = payData(name: "INSURANCE", image:  #imageLiteral(resourceName: "groceries"),isNew: true,isOpened: false)
-        let pay8 = payData(name: "UTILITIES", image:  #imageLiteral(resourceName: "groceries"),isNew: true,isOpened: false)
-        let pay9 = payData(name: "RESERVATIONS", image:  #imageLiteral(resourceName: "groceries"),isNew: true,isOpened: false)
-        let pay11 = payData(name: "FINANCE", image:  #imageLiteral(resourceName: "groceries"),isNew: true,isOpened: false)
+        loadIconImages()
+        
+        
+        let pay1 = payData(name: "AIRTIME-TOPUP", image: coloredIconImages[0],isNew: false,isOpened: false)
+        let pay2 = payData(name: "INTERNET", image: coloredIconImages[1] ,isNew: false,isOpened: false)
+        let pay3 = payData(name: "SEND MONEY", image:  coloredIconImages[2],isNew: false,isOpened: false)
+        let pay4 = payData(name: "FUEL", image:  coloredIconImages[3],isNew: false,isOpened: false)
+        let pay5 = payData(name: "SCAN2PAY", image:  coloredIconImages[4],isNew: true,isOpened: false)
+        let pay6 = payData(name: "TV", image:  coloredIconImages[5],isNew: false,isOpened: false)
+        let pay7 = payData(name: "INSURANCE", image:  coloredIconImages[6],isNew: true,isOpened: false)
+        let pay8 = payData(name: "UTILITIES", image:  coloredIconImages[7],isNew: true,isOpened: false)
+        let pay9 = payData(name: "RESERVATIONS", image:  coloredIconImages[8],isNew: false,isOpened: false)
+        let pay11 = payData(name: "FINANCE", image:  coloredIconImages[9],isNew: false,isOpened: false)
         
         payments.append(pay1)
         payments.append(pay2)
@@ -214,8 +235,54 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         // Do any additional setup after loading the view.
     }
     
-    @objc func accountBtn(sender: AnyObject){
+    func loadIconImages(){
         
+        var iconImages = [UIImage]()
+        
+        
+        let airtimeImage  = UIImage(systemName: "iphone.homebutton")?.withRenderingMode(.alwaysOriginal)
+        
+        let internetImage  = UIImage(systemName: "wifi")?.withRenderingMode(.alwaysOriginal)
+        let moneyImage  = UIImage(systemName: "banknote")?.withRenderingMode(.alwaysOriginal)
+        let fuelImage  = UIImage(systemName: "fuelpump")?.withRenderingMode(.alwaysOriginal)
+        let qrCodeImage  = UIImage(systemName: "qrcode")?.withRenderingMode(.alwaysOriginal)
+        let tvImage  = UIImage(systemName: "tv")?.withRenderingMode(.alwaysOriginal)
+        
+        let insuranceImage  = UIImage(systemName: "shield")?.withRenderingMode(.alwaysOriginal)
+        let utilitiesImage  = UIImage(systemName: "lightbulb")?.withRenderingMode(.alwaysOriginal)
+        
+        
+        let reservationsImage  = UIImage(systemName: "star.square")?.withRenderingMode(.alwaysOriginal)
+        let financeImage  = UIImage(systemName: "dollarsign.circle.fill")?.withRenderingMode(.alwaysOriginal)
+      
+        
+        iconImages.append(airtimeImage!)
+        iconImages.append(internetImage!)
+        iconImages.append(moneyImage!)
+        iconImages.append(fuelImage!)
+        iconImages.append(qrCodeImage!)
+        iconImages.append(tvImage!)
+        
+        iconImages.append(insuranceImage!)
+        iconImages.append(utilitiesImage!)
+        iconImages.append(reservationsImage!)
+        iconImages.append(financeImage!)
+        
+        
+        for image in iconImages{
+            
+            coloredIconImages.append(image.withTintColor(.lightGray))
+            
+        }
+    }
+    
+    @objc func accountBtn(sender: AnyObject){
+      
+        
+    }
+    
+    @objc func editBtnAction(sender: AnyObject){
+        print("Test to see if it works")
         
     }
     

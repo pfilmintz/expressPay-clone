@@ -113,8 +113,8 @@ class FavouritesCell: SwipeCollectionViewCell {
             imgView.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 8),
             imgView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 8),
            // imgView.centerYAnchor.constraint(equalTo: mainView.centerYAnchor),
-            imgView.heightAnchor.constraint(equalToConstant: 45),
-            imgView.widthAnchor.constraint(equalToConstant: 45),
+            imgView.heightAnchor.constraint(equalToConstant: 40),
+            imgView.widthAnchor.constraint(equalToConstant: 40),
             
             titleLabel.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 8),
             titleLabel.leftAnchor.constraint(equalTo: imgView.rightAnchor, constant: 8),

@@ -18,6 +18,8 @@ class TransferItemCell: UICollectionViewCell {
         image.layer.cornerRadius =   image.frame.size.width / 2
         image.clipsToBounds = true
         
+        image.layer.borderColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
+        image.layer.borderWidth = 0.2
         return image
     }()
     

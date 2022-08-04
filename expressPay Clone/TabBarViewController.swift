@@ -28,7 +28,9 @@ class TabBarViewController: UITabBarController {
             
         }
         
-        let images = ["house","bell","person.circle","house"]
+        //chart.bar.doc.horizontal
+        
+        let images = ["house","creditcard","paperplane","chart.bar.doc.horizontal"]
         let titles = ["Home","Pay","Transfers","MyMoney"]
         
         for x in 0..<items.count {

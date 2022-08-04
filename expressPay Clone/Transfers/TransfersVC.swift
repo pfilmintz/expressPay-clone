@@ -116,7 +116,7 @@ class TransfersVC: UIViewController , UICollectionViewDelegate,UICollectionViewD
         items.append(ItemData(title: "Visa Card", image:  #imageLiteral(resourceName: "visa")))
       
         items.append(ItemData(title: "expressCard", image:  #imageLiteral(resourceName: "expresspay2")))
-        items.append(ItemData(title: "myQR", image:  #imageLiteral(resourceName: "groceries")))
+        items.append(ItemData(title: "myQR", image:  #imageLiteral(resourceName: "myqr")))
         
        // view.backgroundColor = .systemBackground
         

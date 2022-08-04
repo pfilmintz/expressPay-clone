@@ -89,13 +89,13 @@ class PayCell: UITableViewCell {
             
           
             
-            imgView.leftAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leftAnchor, constant: 8),
+            imgView.leftAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leftAnchor, constant: 16),
        //     imgView.leftAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leftAnchor, constant: 8),
             
-            imgView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 8),
+            imgView.centerYAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.centerYAnchor),
             
-            imgView.heightAnchor.constraint(equalToConstant: 44),
-            imgView.widthAnchor.constraint(equalToConstant: 44),
+            imgView.heightAnchor.constraint(equalToConstant: 30),
+            imgView.widthAnchor.constraint(equalToConstant: 30),
             
             nameLabel.leftAnchor.constraint(equalTo: imgView.rightAnchor, constant: 16),
             nameLabel.centerYAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.centerYAnchor),
