@@ -65,6 +65,38 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         
         
+        
+        
+        let qrcodeImg  = UIImage(systemName: "qrcode")?.withRenderingMode(.alwaysOriginal)
+        
+        let newImage1 = qrcodeImg!.withTintColor(.white)
+        
+        
+        
+        let qrCodeButton = UIBarButtonItem(image: newImage1,  style: .plain, target: self, action: #selector(qrCodeBtn(sender:)))
+        
+        qrCodeButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -10, right: 0)
+
+    
+        navigationItem.rightBarButtonItem = qrCodeButton
+        
+       
+        
+        
+        
+    
+        
+        let spaceImage  = UIImage(systemName: "person.circle")?.withRenderingMode(.alwaysOriginal)
+        
+        let newImage = spaceImage!.withTintColor(.white)
+        
+        
+        let spaceButton = UIBarButtonItem(image: newImage,  style: .plain, target: self, action: #selector(accountBtn(sender:)))
+        spaceButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        
+        navigationItem.leftBarButtonItems = [spaceButton]
+        
         //navigationItem.title = "expressPay"
         
         let featuredItem1 = featuredData(name: "Airtime", image: #imageLiteral(resourceName: "groceries"))
@@ -138,6 +170,16 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         collectionview.backgroundColor = .white
         
         collectionview.reloadData()
+    }
+    
+    @objc func accountBtn(sender: AnyObject){
+        
+        
+    }
+    
+    @objc func qrCodeBtn(sender: AnyObject){
+        
+        
     }
     
     func createLayout() -> UICollectionViewCompositionalLayout{
