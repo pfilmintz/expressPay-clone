@@ -255,11 +255,41 @@ class MyMoneyVC: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "myMoney"
+        
+        let accountImage  = UIImage(systemName: "person.circle")?.withRenderingMode(.alwaysOriginal)
+        
+        let newImage = accountImage!.withTintColor( #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
+        
+        
+        let accountButton = UIBarButtonItem(image: newImage,  style: .plain, target: self, action: #selector(accountBtn(sender:)))
+        accountButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        
+        
+        navigationItem.leftBarButtonItems = [accountButton]
+        
+        
+        let navBarTitle = UILabel()
+        
+        let navBarTitleAttributes : [NSAttributedString.Key: Any] = [.font: UIFont(name:"Avenir", size: 18)!,NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)]
+        let navBarAttributedString = NSMutableAttributedString(string: "NEW+", attributes: navBarTitleAttributes)
+        navBarTitle.attributedText = navBarAttributedString
+        navBarTitle.sizeToFit()
+
+            let rightItem = UIBarButtonItem(customView: navBarTitle)
+           
+            
+        navigationItem.rightBarButtonItem = rightItem
       
         
         view.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
         
         setupConstrainsts()
+        
+    }
+    
+    @objc func accountBtn(sender: AnyObject){
+        
         
     }
     
