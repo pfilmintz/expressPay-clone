@@ -86,16 +86,16 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         
     
         
-        let spaceImage  = UIImage(systemName: "person.circle")?.withRenderingMode(.alwaysOriginal)
+        let accountImage  = UIImage(systemName: "person.circle")?.withRenderingMode(.alwaysOriginal)
         
-        let newImage = spaceImage!.withTintColor(.white)
-        
-        
-        let spaceButton = UIBarButtonItem(image: newImage,  style: .plain, target: self, action: #selector(accountBtn(sender:)))
-        spaceButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let newImage = accountImage!.withTintColor(.white)
         
         
-        navigationItem.leftBarButtonItems = [spaceButton]
+        let accountButton = UIBarButtonItem(image: newImage,  style: .plain, target: self, action: #selector(accountBtn(sender:)))
+        accountButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        
+        navigationItem.leftBarButtonItems = [accountButton]
         
         //navigationItem.title = "expressPay"
         

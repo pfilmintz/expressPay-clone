@@ -135,6 +135,31 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         
        // navigationItem.title = "Pay"
         
+        let accountImage  = UIImage(systemName: "person.circle")?.withRenderingMode(.alwaysOriginal)
+        
+        let newImage = accountImage!.withTintColor(.white)
+        
+        
+        let accountButton = UIBarButtonItem(image: newImage,  style: .plain, target: self, action: #selector(accountBtn(sender:)))
+        accountButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        
+        
+        navigationItem.leftBarButtonItems = [accountButton]
+        
+        
+        let navBarTitle = UILabel()
+        
+        let navBarTitleAttributes : [NSAttributedString.Key: Any] = [.font: UIFont(name:"Avenir", size: 20)!,NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+        let navBarAttributedString = NSMutableAttributedString(string: "EDIT", attributes: navBarTitleAttributes)
+        navBarTitle.attributedText = navBarAttributedString
+        navBarTitle.sizeToFit()
+
+            let rightItem = UIBarButtonItem(customView: navBarTitle)
+           
+            
+        navigationItem.rightBarButtonItem = rightItem
+        
         view.addSubview(searchBar)
         
         searchBar.delegate = self
@@ -187,6 +212,11 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         tableview.reloadData()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func accountBtn(sender: AnyObject){
+        
+        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
