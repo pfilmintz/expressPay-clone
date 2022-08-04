@@ -83,6 +83,18 @@ class TransfersVC: UIViewController , UICollectionViewDelegate,UICollectionViewD
         
         navigationItem.title = "Transfers"
         
+        let accountImage  = UIImage(systemName: "person.circle")?.withRenderingMode(.alwaysOriginal)
+        
+        let newImage = accountImage!.withTintColor( #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1))
+        
+        
+        let accountButton = UIBarButtonItem(image: newImage,  style: .plain, target: self, action: #selector(accountBtn(sender:)))
+        accountButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        
+        
+        navigationItem.leftBarButtonItems = [accountButton]
+        
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         view.addSubview(titleLabel)
@@ -97,13 +109,13 @@ class TransfersVC: UIViewController , UICollectionViewDelegate,UICollectionViewD
         titleLabel.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -16).isActive = true
         titleLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16).isActive = true
 
-        items.append(ItemData(title: "MTN Mobile Money", image:  #imageLiteral(resourceName: "groceries")))
-        items.append(ItemData(title: "Bank Direct", image:  #imageLiteral(resourceName: "groceries")))
-        items.append(ItemData(title: "AirtelTigo Money", image:  #imageLiteral(resourceName: "groceries")))
-        items.append(ItemData(title: "Vodafone Cash", image:  #imageLiteral(resourceName: "groceries")))
-        items.append(ItemData(title: "Visa Card", image:  #imageLiteral(resourceName: "groceries")))
+        items.append(ItemData(title: "MTN Mobile Money", image:  #imageLiteral(resourceName: "mtnmoney")))
+        items.append(ItemData(title: "Bank Direct", image:  #imageLiteral(resourceName: "bankdirect2")))
+        items.append(ItemData(title: "AirtelTigo Money", image:  #imageLiteral(resourceName: "tigocash")))
+        items.append(ItemData(title: "Vodafone Cash", image:  #imageLiteral(resourceName: "vodcash")))
+        items.append(ItemData(title: "Visa Card", image:  #imageLiteral(resourceName: "visa")))
       
-        items.append(ItemData(title: "expressCard", image:  #imageLiteral(resourceName: "groceries")))
+        items.append(ItemData(title: "expressCard", image:  #imageLiteral(resourceName: "expresspay2")))
         items.append(ItemData(title: "myQR", image:  #imageLiteral(resourceName: "groceries")))
         
        // view.backgroundColor = .systemBackground
@@ -151,6 +163,11 @@ class TransfersVC: UIViewController , UICollectionViewDelegate,UICollectionViewD
         collectionview.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16).isActive = true
         
         collectionview.reloadData()
+    }
+    
+    @objc func accountBtn(sender: AnyObject){
+        
+        
     }
     
 

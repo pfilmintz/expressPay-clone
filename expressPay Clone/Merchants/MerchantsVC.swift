@@ -78,10 +78,10 @@ class MerchantsVC: UIViewController,UISearchBarDelegate,UICollectionViewDelegate
         view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         
         
-        var merchant1 = Merchant(title: "AirtelTigo Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "groceries"))
-        var merchant2 = Merchant(title: "MTN Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "groceries"))
-        var merchant3 = Merchant(title: "Glo Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "groceries"))
-        var merchant4 = Merchant(title: "Vodafone Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "groceries"))
+        var merchant1 = Merchant(title: "AirtelTigo Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "tigo"))
+        var merchant2 = Merchant(title: "MTN Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "mtn"))
+        var merchant3 = Merchant(title: "Glo Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "glo"))
+        var merchant4 = Merchant(title: "Vodafone Prepaid TopUp",section: "AIRTIME-TOPUP", image: #imageLiteral(resourceName: "vod"))
         
         var merchant5 = Merchant(title: "MTN Fiber",section: "INTERNET", image: #imageLiteral(resourceName: "groceries"))
         var merchant6 = Merchant(title: "MTN 4G Data",section: "INTERNET", image: #imageLiteral(resourceName: "groceries"))

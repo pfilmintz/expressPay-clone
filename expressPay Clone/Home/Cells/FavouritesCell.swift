@@ -16,7 +16,8 @@ class FavouritesCell: SwipeCollectionViewCell {
     var imgView: UIImageView = {
         let image = UIImageView()
         
-        
+        image.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        image.layer.cornerRadius =   image.frame.size.width / 2
         image.clipsToBounds = true
         
         return image
@@ -112,8 +113,8 @@ class FavouritesCell: SwipeCollectionViewCell {
             imgView.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 8),
             imgView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 8),
            // imgView.centerYAnchor.constraint(equalTo: mainView.centerYAnchor),
-            imgView.heightAnchor.constraint(equalToConstant: 40),
-            imgView.widthAnchor.constraint(equalToConstant: 40),
+            imgView.heightAnchor.constraint(equalToConstant: 45),
+            imgView.widthAnchor.constraint(equalToConstant: 45),
             
             titleLabel.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 8),
             titleLabel.leftAnchor.constraint(equalTo: imgView.rightAnchor, constant: 8),
@@ -123,8 +124,8 @@ class FavouritesCell: SwipeCollectionViewCell {
             
             menuImgView.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -8),
             
-            imgView.heightAnchor.constraint(equalToConstant: 40),
-            imgView.widthAnchor.constraint(equalToConstant: 40),
+          //  imgView.heightAnchor.constraint(equalToConstant: 40),
+          //  imgView.widthAnchor.constraint(equalToConstant: 40),
             
             menuImgView.centerYAnchor.constraint(equalTo: mainView.centerYAnchor)
             

@@ -13,8 +13,9 @@ class FeaturedCell: UICollectionViewCell {
     
     var imgView: UIImageView = {
         let image = UIImageView()
-        
-        
+        image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        image.layer.cornerRadius =   image.frame.size.width / 2
+    //    image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         
         return image
@@ -81,8 +82,8 @@ class FeaturedCell: UICollectionViewCell {
             
             imgView.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
             imgView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 8),
-            imgView.heightAnchor.constraint(equalToConstant: 40),
-            imgView.widthAnchor.constraint(equalToConstant: 40),
+            imgView.heightAnchor.constraint(equalToConstant: 50),
+            imgView.widthAnchor.constraint(equalToConstant: 50),
             
             nameLabel.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
             nameLabel.topAnchor.constraint(equalTo: imgView.bottomAnchor, constant: 8),

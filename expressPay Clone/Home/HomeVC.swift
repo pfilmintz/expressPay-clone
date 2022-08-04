@@ -99,10 +99,10 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         
         //navigationItem.title = "expressPay"
         
-        let featuredItem1 = featuredData(name: "Airtime", image: #imageLiteral(resourceName: "groceries"))
-        let featuredItem2 = featuredData(name: "Internet", image: #imageLiteral(resourceName: "groceries"))
-        let featuredItem3 = featuredData(name: "Bank Direct", image: #imageLiteral(resourceName: "groceries"))
-        let featuredItem4 = featuredData(name: "Transfers", image: #imageLiteral(resourceName: "groceries")) 
+        let featuredItem1 = featuredData(name: "Airtime", image: #imageLiteral(resourceName: "vod"))
+        let featuredItem2 = featuredData(name: "Internet", image: #imageLiteral(resourceName: "busy"))
+        let featuredItem3 = featuredData(name: "Bank Direct", image: #imageLiteral(resourceName: "bankdirect2"))
+        let featuredItem4 = featuredData(name: "Transfers", image: #imageLiteral(resourceName: "dstv"))
         featuredItems.append(featuredItem1)
         featuredItems.append(featuredItem2)
         featuredItems.append(featuredItem3)
@@ -115,8 +115,8 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
         
         
         
-        let favItem1 = FavData(title: "My MTN prepaid topup",subtitle: "MTN Prepaid Topup", image: #imageLiteral(resourceName: "groceries"))
-        let favItem2 = FavData(title: "Philip Mintah",subtitle: "MTN Mobile Money",  image: #imageLiteral(resourceName: "groceries"))
+        let favItem1 = FavData(title: "My MTN prepaid topup",subtitle: "MTN Prepaid Topup", image: #imageLiteral(resourceName: "mtn"))
+        let favItem2 = FavData(title: "Philip Mintah",subtitle: "MTN Mobile Money",  image: #imageLiteral(resourceName: "mtnmoney"))
         
         
         favItems.append(favItem1)
@@ -287,6 +287,8 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             if indexPath.section == 0{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedCell.identifier , for: indexPath) as! FeaturedCell
                 
+                
+                
                 let image = featuredSection[indexPath.section].featuredItems[indexPath.row].image
                 let name = featuredSection[indexPath.section].featuredItems[indexPath.row].name
                 
@@ -299,6 +301,8 @@ class HomeVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSour
             }else{
                 
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavouritesCell.identifier , for: indexPath) as! FavouritesCell
+                
+                
                 
                 cell.delegate = self
                 

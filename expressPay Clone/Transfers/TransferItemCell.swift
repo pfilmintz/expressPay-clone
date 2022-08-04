@@ -14,7 +14,8 @@ class TransferItemCell: UICollectionViewCell {
     var imgView: UIImageView = {
         let image = UIImageView()
         
-        
+        image.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        image.layer.cornerRadius =   image.frame.size.width / 2
         image.clipsToBounds = true
         
         return image
