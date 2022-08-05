@@ -76,6 +76,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04365461289D4E07000042E4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0436545F289D3C30000042E4 /* PaySubCell.swift */,
+				0476581A289A8A5300FF9828 /* PayCell.swift */,
+				0476581C289A997500FF9828 /* NewPayCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		04365462289D4E19000042E4 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				0478C9D5289855C300048816 /* Home */,
+				0467171728993AF9002E92D6 /* Merchants */,
+				0467171F2899731C002E92D6 /* Pay */,
+				046717222899738C002E92D6 /* Transfers */,
+				04765820289AAC0500FF9828 /* MyMoney */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		04365463289D4E69000042E4 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				041337F82899950A00E68E3B /* Shared.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		0467171728993AF9002E92D6 /* Merchants */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +126,8 @@
 		0467171F2899731C002E92D6 /* Pay */ = {
 			isa = PBXGroup;
 			children = (
+				04365461289D4E07000042E4 /* Cells */,
 				0467172028997346002E92D6 /* PayVC.swift */,
-				0476581A289A8A5300FF9828 /* PayCell.swift */,
-				0476581C289A997500FF9828 /* NewPayCell.swift */,
-				0436545F289D3C30000042E4 /* PaySubCell.swift */,
 			);
 			path = Pay;
 			sourceTree = "<group>";
@@ -150,21 +178,17 @@
 		0478C9C0289854D200048816 /* expressPay Clone */ = {
 			isa = PBXGroup;
 			children = (
+				04365463289D4E69000042E4 /* utils */,
+				04365462289D4E19000042E4 /* ui */,
 				04765823289AC43D00FF9828 /* extensions */,
-				04765820289AAC0500FF9828 /* MyMoney */,
-				046717222899738C002E92D6 /* Transfers */,
-				0467171F2899731C002E92D6 /* Pay */,
-				0467171728993AF9002E92D6 /* Merchants */,
-				0478C9D5289855C300048816 /* Home */,
 				0478C9C1289854D200048816 /* AppDelegate.swift */,
+				0467171D289972E9002E92D6 /* TabBarViewController.swift */,
 				0478C9C3289854D200048816 /* SceneDelegate.swift */,
 				0478C9C5289854D200048816 /* ViewController.swift */,
 				0478C9C7289854D200048816 /* Main.storyboard */,
 				0478C9CA289854D500048816 /* Assets.xcassets */,
 				0478C9CC289854D500048816 /* LaunchScreen.storyboard */,
 				0478C9CF289854D500048816 /* Info.plist */,
-				0467171D289972E9002E92D6 /* TabBarViewController.swift */,
-				041337F82899950A00E68E3B /* Shared.swift */,
 			);
 			path = "expressPay Clone";
 			sourceTree = "<group>";

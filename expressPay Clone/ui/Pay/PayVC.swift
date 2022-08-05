@@ -65,7 +65,7 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
                 
                 payments[indexPath.section].isOpened = true
             let sections = IndexSet.init(integer: indexPath.section)
-            tableView.reloadSections(sections, with: .none)
+                tableView.reloadSections(sections, with: .none)
             }
             
         }
@@ -197,7 +197,7 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         navBarTitle.addGestureRecognizer(tap)
         
      
-        
+       
         
 
         let rightItem = UIBarButtonItem(customView: navBarTitle)
@@ -205,10 +205,30 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
             
         navigationItem.rightBarButtonItem = rightItem
         
+        
+        
         view.addSubview(searchBar)
+       
+        view.addSubview(tableview)
+        
+        setupConstrainsts()
+        
         
         searchBar.delegate = self
-         
+        tableview.delegate = self
+        tableview.dataSource = self
+        
+        
+        tableview.backgroundColor = .white
+        
+        loadIconImages()
+        
+        loadItems()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func setupConstrainsts(){
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         
         searchBar.placeholder = "Search Accounts"
@@ -218,9 +238,7 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         searchBar.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         searchBar.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
         
-        tableview.delegate = self
-        tableview.dataSource = self
-        view.addSubview(tableview)
+        
         
         tableview.translatesAutoresizingMaskIntoConstraints = false
         
@@ -229,11 +247,9 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         tableview.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         tableview.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         tableview.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-        
-        tableview.backgroundColor = .white
-        
-        loadIconImages()
-        
+    }
+    
+    func loadItems(){
         let pay1Item = paySubData(title: "My Mtn Prepaid Topup", subtitle: "MTN Prepaid Topup", image: #imageLiteral(resourceName: "mtn"))
         var pay1subItems = [paySubData]()
         pay1subItems.append(pay1Item)
@@ -270,8 +286,6 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         payments.append(pay11)
         
         tableview.reloadData()
-
-        // Do any additional setup after loading the view.
     }
     
     func loadIconImages(){
