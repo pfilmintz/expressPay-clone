@@ -17,7 +17,11 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         
        
             if(payments[section].isOpened == true){
+                if(payments[section].subItem == nil){
                 return 2
+                }else{
+                    return payments[section].subItem!.count + 2
+                }
             }else{
                 return 1
             
@@ -95,11 +99,26 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         
         return cell
             
-        }else{
+        }else if(indexPath.row == 1){
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewPayCell", for: indexPath)
                 as! NewPayCell
             cell.backgroundColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
             cell.selectionStyle = .none
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PaySubCell", for: indexPath)
+                as! PaySubCell
+         
+            cell.backgroundColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
+            cell.selectionStyle = .none
+            
+            let item = payments[indexPath.section].subItem?[indexPath.row - 2]
+            
+            cell.imgView.image = item?.image
+            
+            cell.titleLabel.text = item?.title
+            cell.subtitleLabel.text = item?.subtitle
             
             return cell
         }
@@ -111,6 +130,13 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         let image: UIImage
         let isNew: Bool
         var isOpened: Bool
+        var subItem: [paySubData]?
+    }
+    
+    struct paySubData{
+        let title: String
+        let subtitle: String
+        let image: UIImage
     }
     
     private let tableview: UITableView = {
@@ -118,6 +144,7 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
       
         tableview.register(PayCell.self, forCellReuseIdentifier: PayCell.identifier)
         tableview.register(NewPayCell.self, forCellReuseIdentifier: NewPayCell.identifier)
+        tableview.register(PaySubCell.self, forCellReuseIdentifier: PaySubCell.identifier)
         
         return tableview
         
@@ -207,10 +234,22 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         
         loadIconImages()
         
+        let pay1Item = paySubData(title: "My Mtn Prepaid Topup", subtitle: "MTN Prepaid Topup", image: #imageLiteral(resourceName: "mtn"))
+        var pay1subItems = [paySubData]()
+        pay1subItems.append(pay1Item)
         
-        let pay1 = payData(name: "AIRTIME-TOPUP", image: coloredIconImages[0],isNew: false,isOpened: false)
+        let pay1 = payData(name: "AIRTIME-TOPUP", image: coloredIconImages[0],isNew: false,isOpened: false,subItem: pay1subItems)
+        
         let pay2 = payData(name: "INTERNET", image: coloredIconImages[1] ,isNew: false,isOpened: false)
-        let pay3 = payData(name: "SEND MONEY", image:  coloredIconImages[2],isNew: false,isOpened: false)
+        
+        var pay3subItems = [paySubData]()
+        let pay3Item = paySubData(title: "My expressCard", subtitle: "expressCard", image: #imageLiteral(resourceName: "expresspay2"))
+        let pay3Item2 = paySubData(title: "My Mtn Prepaid Topup", subtitle: "MTN Prepaid Topup", image: #imageLiteral(resourceName: "mtn"))
+        
+        pay3subItems.append(pay3Item)
+        pay3subItems.append(pay3Item2)
+        
+        let pay3 = payData(name: "SEND MONEY", image:  coloredIconImages[2],isNew: false,isOpened: false,subItem: pay3subItems)
         let pay4 = payData(name: "FUEL", image:  coloredIconImages[3],isNew: false,isOpened: false)
         let pay5 = payData(name: "SCAN2PAY", image:  coloredIconImages[4],isNew: true,isOpened: false)
         let pay6 = payData(name: "TV", image:  coloredIconImages[5],isNew: false,isOpened: false)
@@ -244,7 +283,7 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         
         let internetImage  = UIImage(systemName: "wifi")?.withRenderingMode(.alwaysOriginal)
         let moneyImage  = UIImage(systemName: "banknote")?.withRenderingMode(.alwaysOriginal)
-        let fuelImage  = UIImage(systemName: "fuelpump")?.withRenderingMode(.alwaysOriginal)
+        let fuelImage  = UIImage(systemName: "fuelpump")?.withRenderingMode(.alwaysOriginal) ?? UIImage(systemName: "questionmark.square.fill")!.withRenderingMode(.alwaysOriginal)
         let qrCodeImage  = UIImage(systemName: "qrcode")?.withRenderingMode(.alwaysOriginal)
         let tvImage  = UIImage(systemName: "tv")?.withRenderingMode(.alwaysOriginal)
         
@@ -259,7 +298,7 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
         iconImages.append(airtimeImage!)
         iconImages.append(internetImage!)
         iconImages.append(moneyImage!)
-        iconImages.append(fuelImage!)
+        iconImages.append(fuelImage)
         iconImages.append(qrCodeImage!)
         iconImages.append(tvImage!)
         
@@ -273,6 +312,16 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
             
             coloredIconImages.append(image.withTintColor(.lightGray))
             
+        }
+    }
+    
+    func safeSystemImage(_ image: String) -> String {
+        let image = "\(image).square.fill"
+        
+        if UIImage(systemName: image) != nil {
+            return image
+        } else {
+            return "" // ← The image you want in case it doesn't exist.
         }
     }
     
@@ -296,7 +345,7 @@ class PayVC: UIViewController,UISearchBarDelegate,UITableViewDataSource,UITableV
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("searchText \(searchBar.text!)")
        // searchName = "\(searchBar.text!)".lowercased()
-        let searchName = "\(searchBar.text!)".lowercased()
+       
         
   
     }
